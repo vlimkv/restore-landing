@@ -2,21 +2,26 @@
 
 // ============= PRELOADER =============
 window.addEventListener('load', () => {
-    const preload = document.querySelector('.preload');
-    const preloadLine = document.querySelector('.preload__status-line');
-    
-    // Анимация загрузки
+  const preload = document.querySelector('.preload');
+  const preloadLine = document.querySelector('.preload__status-line');
+
+  // если прелоадера нет — выходим спокойно
+  if (!preload) return;
+
+  // линия — необязательная
+  if (preloadLine) {
     setTimeout(() => {
-        preloadLine.style.width = '100%';
+      preloadLine.style.width = '100%';
     }, 100);
-    
-    // Скрываем прелоадер
+  }
+
+  setTimeout(() => {
+    preload.classList.add('hidden');
+
     setTimeout(() => {
-        preload.classList.add('hidden');
-        setTimeout(() => {
-            preload.style.display = 'none';
-        }, 500);
-    }, 2500);
+      preload.remove(); // лучше чем display none
+    }, 600);
+  }, 2500);
 });
 
 // ============= SWIPER INITIALIZATION =============
