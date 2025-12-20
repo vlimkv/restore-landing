@@ -161,41 +161,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ============= PROGRAM TABS - ИСПРАВЛЕНО =============
 document.addEventListener('DOMContentLoaded', () => {
-    const programTabs = document.querySelectorAll('.program__tab-item');
-    const modulWrapper = document.querySelector('.modul__wrapper');
-    const workoutWrapper = document.querySelector('.workout__wrapper');
-    const tabBg = document.querySelector('.program__tab-bg');
-    const programSection = document.querySelector('.program');
+  const programTabs = document.querySelectorAll('.program__tab-item');
+  const modulWrapper = document.querySelector('.modul__wrapper');
+  const workoutWrapper = document.querySelector('.workout__wrapper');
+  const tabBg = document.querySelector('.program__tab-bg');
+  const programSection = document.querySelector('.program');
 
-    programTabs.forEach((tab, index) => {
-        tab.addEventListener('click', () => {
-            // Remove active class
-            programTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
+  // если нет программы — выходим
+  if (!programTabs.length || !modulWrapper || !workoutWrapper || !programSection) return;
 
-            // Move background
-            tabBg.style.transform = `translateX(${index * 100}%)`;
+  programTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      programTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
 
-            if (index === 0) {
-                // Теория
-                modulWrapper.style.display = 'block';
-                workoutWrapper.style.display = 'none';
+      if (tabBg) tabBg.style.transform = `translateX(${index * 100}%)`;
 
-                // вернуть тему по активному сабтабу (если сейчас "подарки")
-                const activeSubtab = document.querySelector('.subtabs__item.active');
-                const isGifts = activeSubtab && activeSubtab.getAttribute('data-modul') === 'gifts';
-                programSection.classList.toggle('gift-theme', !!isGifts);
+      if (index === 0) {
+        modulWrapper.style.display = 'block';
+        workoutWrapper.style.display = 'none';
 
-            } else {
-                // Тренировки
-                modulWrapper.style.display = 'none';
-                workoutWrapper.style.display = 'block';
-
-                // на тренировках красной темы быть НЕ должно
-                programSection.classList.remove('gift-theme');
-            }
-        });
+        const activeSubtab = programSection.querySelector('.subtabs__item.active');
+        const isGifts = activeSubtab?.getAttribute('data-modul') === 'gifts';
+        programSection.classList.toggle('gift-theme', !!isGifts);
+      } else {
+        modulWrapper.style.display = 'none';
+        workoutWrapper.style.display = 'block';
+        programSection.classList.remove('gift-theme');
+      }
     });
+  });
 
     // Subtabs for modules - с темой подарков
     const subtabs = document.querySelectorAll('.subtabs__item');
@@ -324,55 +319,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ============= COUNTDOWN TIMER =============
-document.addEventListener('DOMContentLoaded', () => {
-    const timerElements = {
-        days: document.querySelector('.timer__item-n:nth-of-type(1)'),
-        hours: document.querySelector('.timer__item-n:nth-of-type(2)'),
-        minutes: document.querySelector('.timer__item-n:nth-of-type(3)'),
-        seconds: document.querySelector('.timer__item-n:nth-of-type(4)')
-    };
-
-    // Целевая дата: 25 января 2025
-    const targetDate = new Date('2025-01-25T23:59:59').getTime();
-
-    function updateTimer() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-
-        if (distance < 0) {
-            // Таймер закончился
-            if (timerElements.days) timerElements.days.textContent = '00';
-            if (timerElements.hours) timerElements.hours.textContent = '00';
-            if (timerElements.minutes) timerElements.minutes.textContent = '00';
-            if (timerElements.seconds) timerElements.seconds.textContent = '00';
-            return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        if (timerElements.days) {
-            timerElements.days.textContent = String(days).padStart(2, '0');
-        }
-        if (timerElements.hours) {
-            timerElements.hours.textContent = String(hours).padStart(2, '0');
-        }
-        if (timerElements.minutes) {
-            timerElements.minutes.textContent = String(minutes).padStart(2, '0');
-        }
-        if (timerElements.seconds) {
-            timerElements.seconds.textContent = String(seconds).padStart(2, '0');
-        }
-    }
-
-    // Обновляем сразу и каждую секунду
-    updateTimer();
-    setInterval(updateTimer, 1000);
-});
-
 // ============= SMOOTH SCROLL (SAFE) =============
 document.addEventListener('DOMContentLoaded', () => {
   // либо оставь как было, но важно: ТОЛЬКО #якоря
@@ -451,7 +397,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             
             // Обновляем swiper
-            const swiper = parent.querySelector('.uroki__swiper').swiper;
+            const swiperEl = parent.querySelector('.uroki__swiper');
+            const sw = swiperEl?.swiper;
+            if (sw) sw.update();
+
             if (swiper) {
                 swiper.update();
             }
@@ -496,64 +445,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============= CONSOLE LOG =============
 console.log('%cRE:STORE WOMAN', 'font-size: 24px; font-weight: bold; color: #000;');
 console.log('%cby Seza Amankeldi', 'font-size: 14px; color: #666;');
-
-// Таймер обратного отсчета
-function initTimer() {
-    // Установи дату окончания (25 декабря 2024, 23:59:59)
-    const endDate = new Date('2025-12-21T23:59:59').getTime();
-
-    function updateTimer() {
-        const now = new Date().getTime();
-        const distance = endDate - now;
-
-        if (distance < 0) {
-            document.getElementById('days').textContent = '00';
-            document.getElementById('hours').textContent = '00';
-            document.getElementById('minutes').textContent = '00';
-            document.getElementById('seconds').textContent = '00';
-            return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        const daysEl = document.getElementById('days');
-        const hoursEl = document.getElementById('hours');
-        const minutesEl = document.getElementById('minutes');
-        const secondsEl = document.getElementById('seconds');
-
-        // Добавляем анимацию при изменении
-        if (daysEl.textContent !== String(days).padStart(2, '0')) {
-            daysEl.classList.add('tick');
-            setTimeout(() => daysEl.classList.remove('tick'), 300);
-        }
-        if (hoursEl.textContent !== String(hours).padStart(2, '0')) {
-            hoursEl.classList.add('tick');
-            setTimeout(() => hoursEl.classList.remove('tick'), 300);
-        }
-        if (minutesEl.textContent !== String(minutes).padStart(2, '0')) {
-            minutesEl.classList.add('tick');
-            setTimeout(() => minutesEl.classList.remove('tick'), 300);
-        }
-        secondsEl.classList.add('tick');
-        setTimeout(() => secondsEl.classList.remove('tick'), 300);
-
-        daysEl.textContent = String(days).padStart(2, '0');
-        hoursEl.textContent = String(hours).padStart(2, '0');
-        minutesEl.textContent = String(minutes).padStart(2, '0');
-        secondsEl.textContent = String(seconds).padStart(2, '0');
-    }
-
-    updateTimer();
-    setInterval(updateTimer, 1000);
-}
-
-// Запуск после загрузки DOM
-document.addEventListener('DOMContentLoaded', function() {
-    initTimer();
-});
 
 function initTarifModals() {
   const buyBtns = document.querySelectorAll('.btn-buy');
@@ -603,4 +494,62 @@ function initTarifModals() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing modals...');
     initTarifModals();
+});
+
+// ============= COUNTDOWN TIMER (ONE) =============
+document.addEventListener('DOMContentLoaded', () => {
+  // поменяй под свою дату
+  const targetDate = new Date('2025-12-21T23:59:59').getTime();
+
+  const byId = {
+    days: document.getElementById('days'),
+    hours: document.getElementById('hours'),
+    minutes: document.getElementById('minutes'),
+    seconds: document.getElementById('seconds'),
+  };
+
+  const byClass = {
+    days: document.querySelector('.timer__item-n:nth-of-type(1)'),
+    hours: document.querySelector('.timer__item-n:nth-of-type(2)'),
+    minutes: document.querySelector('.timer__item-n:nth-of-type(3)'),
+    seconds: document.querySelector('.timer__item-n:nth-of-type(4)'),
+  };
+
+  // выбираем доступную разметку
+  const els = (byId.days && byId.hours && byId.minutes && byId.seconds) ? byId : byClass;
+
+  // если на странице вообще нет таймера — выходим
+  if (!els.days || !els.hours || !els.minutes || !els.seconds) return;
+
+  function setVal(el, val) {
+    const next = String(val).padStart(2, '0');
+    if (el.textContent !== next) {
+      el.classList.add('tick');
+      setTimeout(() => el.classList.remove('tick'), 300);
+      el.textContent = next;
+    }
+  }
+
+  function update() {
+    const now = Date.now();
+    const distance = targetDate - now;
+
+    if (distance <= 0) {
+      ['days','hours','minutes','seconds'].forEach(k => els[k].textContent = '00');
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    setVal(els.days, days);
+    setVal(els.hours, hours);
+    setVal(els.minutes, minutes);
+    setVal(els.seconds, seconds);
+  }
+
+  update();
+  setInterval(update, 1000);
 });
