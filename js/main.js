@@ -383,46 +383,44 @@ document.addEventListener('DOMContentLoaded', () => {
             const swiperEl = parent.querySelector('.uroki__swiper');
             const sw = swiperEl?.swiper;
             if (sw) sw.update();
-
-            if (swiper) {
-                swiper.update();
-            }
         });
     });
 });
 
-// ============= GAID TABS FILTERING =============
+// ============= GAID TABS FILTERING (SAFE) =============
 document.addEventListener('DOMContentLoaded', () => {
-    const gaidTabs = document.querySelectorAll('.gaid__tabs-item');
-    
-    gaidTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const parent = tab.closest('.modul');
-            const allTabs = parent.querySelectorAll('.gaid__tabs-item');
-            const category = tab.getAttribute('data-tab');
-            const items = parent.querySelectorAll('.gaid__item');
-            
-            // Убираем active у всех табов
-            allTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            
-            // Фильтруем элементы
-            items.forEach(item => {
-                if (category === 'all') {
-                    item.style.display = 'block';
-                } else {
-                    const itemCategory = item.getAttribute('data-category');
-                    item.style.display = itemCategory === category ? 'block' : 'none';
-                }
-            });
-            
-            // Обновляем swiper
-            const swiper = parent.querySelector('.gaid__swiper').swiper;
-            if (swiper) {
-                swiper.update();
-            }
-        });
+  const gaidTabs = document.querySelectorAll('.gaid__tabs-item');
+  if (!gaidTabs.length) return;
+
+  gaidTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const parent = tab.closest('.modul');
+      if (!parent) return;
+
+      const allTabs = parent.querySelectorAll('.gaid__tabs-item');
+      const category = tab.getAttribute('data-tab') || 'all';
+      const items = parent.querySelectorAll('.gaid__item');
+
+      // active
+      allTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // filter
+      items.forEach(item => {
+        if (category === 'all') {
+          item.style.display = '';
+        } else {
+          const itemCategory = item.getAttribute('data-category');
+          item.style.display = (itemCategory === category) ? '' : 'none';
+        }
+      });
+
+      // update swiper (safe)
+      const swiperEl = parent.querySelector('.gaid__swiper');
+      const sw = swiperEl?.swiper;
+      if (sw) sw.update();
     });
+  });
 });
 
 // ============= CONSOLE LOG =============
@@ -479,60 +477,63 @@ document.addEventListener('DOMContentLoaded', function() {
     initTarifModals();
 });
 
-// ============= COUNTDOWN TIMER (ONE) =============
+// Простая автоматическая раскладка
+function initReviewsGrid() {
+    const grids = document.querySelectorAll('.reviews__grid');
+    
+    grids.forEach(grid => {
+        const items = Array.from(grid.querySelectorAll('.reviews__item'));
+        
+        items.forEach((item, index) => {
+            const img = item.querySelector('img');
+            
+            img.addEventListener('load', function() {
+                const ratio = this.naturalWidth / this.naturalHeight;
+                
+                // Удаляем старые классы
+                item.classList.remove('size-tall', 'size-wide', 'size-large');
+                
+                // Присваиваем размер по пропорциям
+                if (ratio > 1.3) {
+                    // Широкая
+                    item.classList.add('size-wide');
+                } else if (ratio < 0.75) {
+                    // Высокая
+                    item.classList.add('size-tall');
+                }
+                // Иначе остается обычной (1x1)
+            });
+            
+            if (img.complete) {
+                img.dispatchEvent(new Event('load'));
+            }
+        });
+    });
+}
+
+// Reviews Swiper
 document.addEventListener('DOMContentLoaded', () => {
-  // поменяй под свою дату
-  const targetDate = new Date('2025-12-21T23:59:59').getTime();
-
-  const byId = {
-    days: document.getElementById('days'),
-    hours: document.getElementById('hours'),
-    minutes: document.getElementById('minutes'),
-    seconds: document.getElementById('seconds'),
-  };
-
-  const byClass = {
-    days: document.querySelector('.timer__item-n:nth-of-type(1)'),
-    hours: document.querySelector('.timer__item-n:nth-of-type(2)'),
-    minutes: document.querySelector('.timer__item-n:nth-of-type(3)'),
-    seconds: document.querySelector('.timer__item-n:nth-of-type(4)'),
-  };
-
-  // выбираем доступную разметку
-  const els = (byId.days && byId.hours && byId.minutes && byId.seconds) ? byId : byClass;
-
-  // если на странице вообще нет таймера — выходим
-  if (!els.days || !els.hours || !els.minutes || !els.seconds) return;
-
-  function setVal(el, val) {
-    const next = String(val).padStart(2, '0');
-    if (el.textContent !== next) {
-      el.classList.add('tick');
-      setTimeout(() => el.classList.remove('tick'), 300);
-      el.textContent = next;
-    }
-  }
-
-  function update() {
-    const now = Date.now();
-    const distance = targetDate - now;
-
-    if (distance <= 0) {
-      ['days','hours','minutes','seconds'].forEach(k => els[k].textContent = '00');
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    setVal(els.days, days);
-    setVal(els.hours, hours);
-    setVal(els.minutes, minutes);
-    setVal(els.seconds, seconds);
-  }
-
-  update();
-  setInterval(update, 1000);
+    // Инициализируем грид
+    initReviewsGrid();
+    
+    // Инициализируем свайпер
+    const reviewsSwiper = new Swiper('.reviews__swiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        grabCursor: true,
+        navigation: {
+            nextEl: '.reviews-arrow-next',
+            prevEl: '.reviews-arrow-prev',
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+            },
+            1024: {
+                slidesPerView: 1,
+                spaceBetween: 24,
+            },
+        },
+    });
 });
