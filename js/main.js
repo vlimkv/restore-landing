@@ -1,27 +1,46 @@
 // RE:STORE WOMAN - FEMIN Style JavaScript
 
-// ============= PRELOADER =============
-window.addEventListener('load', () => {
+// ============= PRELOADER (FIXED) =============
+// Прелоадер исчезнет либо после загрузки, либо через 3 секунды (что наступит раньше)
+let preloaderHidden = false;
+
+function hidePreloader() {
+  if (preloaderHidden) return;
+  preloaderHidden = true;
+
+  const preload = document.querySelector('.preload');
+  if (!preload) return;
+
+  preload.classList.add('hidden');
+  setTimeout(() => {
+    preload.remove();
+  }, 600);
+}
+
+// Скрываем прелоадер при загрузке DOM (быстрее)
+document.addEventListener('DOMContentLoaded', () => {
   const preload = document.querySelector('.preload');
   const preloadLine = document.querySelector('.preload__status-line');
 
-  // если прелоадера нет — выходим спокойно
   if (!preload) return;
 
-  // линия — необязательная
+  // Анимация линии загрузки
   if (preloadLine) {
     setTimeout(() => {
       preloadLine.style.width = '100%';
     }, 100);
   }
 
-  setTimeout(() => {
-    preload.classList.add('hidden');
+  // Скрываем через 2.5 секунды после загрузки DOM
+  setTimeout(hidePreloader, 2500);
+});
 
-    setTimeout(() => {
-      preload.remove(); // лучше чем display none
-    }, 600);
-  }, 2500);
+// Резервное скрытие через 3 секунды от начала (если что-то пошло не так)
+setTimeout(hidePreloader, 3000);
+
+// Дополнительная страховка - скрываем при полной загрузке страницы
+window.addEventListener('load', () => {
+  setTimeout(hidePreloader, 500);
 });
 
 // ============= SWIPER INITIALIZATION =============
@@ -262,47 +281,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ============= SMOOTH SCROLL FOR TABS =============
-document.addEventListener('DOMContentLoaded', () => {
-    const tabsContainers = document.querySelectorAll('.subtabs, .subtabsW');
-    
-    tabsContainers.forEach(container => {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        container.addEventListener('mousedown', (e) => {
-            isDown = true;
-            container.style.cursor = 'grabbing';
-            startX = e.pageX - container.offsetLeft;
-            scrollLeft = container.scrollLeft;
-        });
-
-        container.addEventListener('mouseleave', () => {
-            isDown = false;
-            container.style.cursor = 'grab';
-        });
-
-        container.addEventListener('mouseup', () => {
-            isDown = false;
-            container.style.cursor = 'grab';
-        });
-
-        container.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - container.offsetLeft;
-            const walk = (x - startX) * 2;
-            container.scrollLeft = scrollLeft - walk;
-        });
-    });
-});
-
 // ============= FAQ ACCORDION =============
 document.addEventListener('DOMContentLoaded', () => {
     const faqItems = document.querySelectorAll('.faq__item');
-
-    faqItems.forEach(item => {
+    
+    faqItems.forEach((item) => {
         const head = item.querySelector('.faq__item-head');
         
         head.addEventListener('click', () => {
