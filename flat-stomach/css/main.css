@@ -1,0 +1,1942 @@
+.element-light {
+  position: relative;
+  width: 390px;
+  height: 5529px; /* <--- ДОБАВЬТЕ ЭТУ СТРОКУ (значение из вашего первого макета) */
+  background-color: #ffffff;
+  overflow: hidden; 
+  font-family: 'Manrope', sans-serif;
+}
+.element-light .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 390px;
+  height: 683px;
+  background-color: #465940;
+  overflow: hidden;
+}
+
+.element-light .neutral-minimalist {
+  position: absolute;
+  width: 325px;
+  height: 406px;
+  left: -130px;
+  top: 376px;
+  object-fit: cover;
+}
+
+.element-light .img {
+  position: absolute;
+  width: 267px;
+  height: 500px;
+  left: 169px;
+  top: 183px;
+  object-fit: cover;
+}
+
+.element-light .gradient,
+.element-light .div {
+  pointer-events: none;
+}
+
+.element-light .gradient {
+  position: absolute;
+  width: calc(100% + 374px);
+  top: 566px;
+  left: -186px;
+  height: 117px;
+  background: linear-gradient(
+    0deg,
+    rgba(70, 89, 64, 1) 0%,
+    rgba(69, 88, 64, 0) 100%
+  );
+}
+
+.element-light .div {
+  position: absolute;
+  width: calc(100% - 196px);
+  top: 469px;
+  left: -15px;
+  height: 74px;
+  transform: rotate(-180deg);
+  background: linear-gradient(
+    0deg,
+    rgba(70, 89, 64, 1) 0%,
+    rgba(70, 89, 64, 0) 100%
+  );
+}
+
+.element-light .border {
+  position: absolute;
+  height: 32px;
+  width: 235px;
+  left: 21px;
+  top: 23px;
+  border: 1px solid #FDFBF0;
+  border-radius: 50px;
+}
+
+.element-light .container {
+  position: absolute;
+  width: 235px; /* Совпадает с шириной бордера */
+  left: 21px;   /* Совпадает с left бордера */
+  top: 23px;    /* Совпадает с top бордера */
+  height: 32px; /* Совпадает с height бордера */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.element-light .element {
+  /* Убираем margin, используем flex родителя */
+  margin: 0; 
+  width: auto;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0.05em; /* Чуть разрядим для читаемости как в uppercase */
+  color: #FDFBF0;
+  text-transform: uppercase;
+}
+
+.element-light .container-2 {
+  position: absolute;
+  width: calc(100% - 308px);
+  top: 27px;
+  left: 281px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.element-light .div-wrapper {
+  position: absolute;
+  left: 22px;
+  top: 290px;
+  width: 216px;
+}
+
+.element-light .text-wrapper {
+  margin-top: -0.1px;
+  width: 216px;
+  height: 60px;
+  margin-left: 0.1px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  color: #fdfbf0;
+  font-size: 12px;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0;
+}
+
+.element-light .container-3 {
+  position: absolute;
+  left: 21px;
+  top: 226px;
+  width: 213px;
+  height: 40px;
+}
+
+.element-light .p {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FDFBF0;
+  display: block; 
+}
+
+.element-light .background-2 {
+  position: absolute;
+  left: 195px;
+  top: 603px;
+  width: 170px;
+  height: 35px;
+  background: #FFF7E6;
+  opacity: 0.65;
+  border-radius: 10px;
+}
+
+.element-light .container-4 {
+  position: absolute;
+  left: 195px;
+  top: 603px; /* Совмещаем с фоном */
+  width: 170px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.element-light .text-wrapper-2 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #00311F;
+  margin: 0;
+}
+
+.element-light .button-dialog {
+  position: absolute;
+  width: calc(100% - 360px);
+  height: calc(100% - 653px);
+  top: 586px;
+  left: 349px;
+  display: flex;
+  justify-content: center;
+  background-color: #fff7e6;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.element-light .text-wrapper-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4.9px;
+  width: 3.97px;
+  height: 20px;
+  margin-left: 0.3px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  color: #48261d;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 18.6px;
+  white-space: nowrap;
+}
+
+.element-light .link {
+  position: absolute;
+  /* Точные координаты из макета */
+  top: 371px;
+  left: 22px;
+  width: 183px; /* 390 - 22 - 185.22 = ~183px */
+  height: 51px; /* Вычислено из bottom: 261px */
+  background: #FFF7E6;
+  border-radius: 50px;
+  text-decoration: none;
+  display: flex; /* Для центрирования текста */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Опционально, для красоты */
+}
+
+.element-light .text-wrapper-4 {
+  width: auto;
+  height: auto;
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #00311F;
+}
+
+.element-light .text-wrapper-5 {
+  position: absolute;
+  top: 131px;
+  width: 100%; /* Центрирование */
+  left: 0;
+  height: 55px;
+  font-family: 'Forum', serif; /* Важно! */
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 55px;
+  letter-spacing: -0.04em;
+  color: #FDFBF0;
+  display: flex;
+  justify-content: center;
+  z-index: 10; /* Поверх картинок */
+}
+
+.element-light .IMG {
+  position: absolute;
+  top: 90px;
+  left: 161px;
+  width: 214px;
+  height: 55px;
+  aspect-ratio: 3.89;
+}
+
+.element-light .background-3 {
+  position: absolute;
+  top: 682px;
+  left: 0;
+  width: 390px;
+  height: 236px;
+  background-color: #465940;
+  overflow: hidden;
+}
+
+.element-light .container-5 {
+  position: absolute;
+  left: 25px;
+  top: 201px;
+  height: 28px;
+  width: auto;
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+}
+
+.element-light .text-wrapper-6 {
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFF7E6;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+.element-light .container-6,
+.element-light .container-7,
+.element-light .container-8 {
+  position: absolute;
+  top: 168px;
+  width: 20px;
+  height: 23.2px;
+  object-fit: contain;
+}
+
+/* 1-я стрелка (самая яркая) */
+.element-light .container-6 {
+  left: 25px;
+  opacity: 1;
+}
+
+/* 2-я стрелка (средняя) */
+.element-light .container-7 {
+  left: 52px;
+  opacity: 0.6; /* Значение из макета */
+}
+
+/* 3-я стрелка (тусклая) */
+.element-light .container-8 {
+  left: 79px;
+  opacity: 0.35; /* Значение из макета */
+}
+
+.element-light .text-wrapper-7 {
+  position: absolute;
+  left: calc(50% - 163.5px - 6.5px); 
+  top: 45px;
+  width: 327px;
+  height: 103px;
+  font-family: 'Forum', serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 55px;
+  letter-spacing: -0.04em;
+  color: #FFF7E6;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.element-light .background-4 {
+  position: absolute;
+  top: 1174px;
+  left: 0;
+  width: 390px;
+  height: 767px;
+  background-color: #465940;
+  overflow: hidden;
+}
+
+.element-light .background-5 {
+  position: absolute;
+  top: 570px;
+  left: 0;
+  width: 556px;
+  height: 110px;
+  background-color: #FFFCEF;
+  border-radius: 50px;
+}
+
+.element-light .background-6 {
+  position: absolute;
+  top: 432px;
+  left: -166px;
+  width: 556px;
+  height: 98px;
+  background-color: #FFFCEF;
+  border-radius: 50px;
+}
+
+.element-light .background-7 {
+  position: absolute;
+  top: 281px;
+  left: 0;
+  width: 556px;
+  height: 115px;
+  background-color: #FFFCEF;
+  border-radius: 50px;
+}
+
+.element-light .background-8 {
+  position: absolute;
+  top: 130px;
+  left: -241px;
+  width: 631px;
+  height: 115px;
+  background-color: #FFFCEF;
+  border-radius: 50px;
+}
+
+.element-light .container-9 {
+  position: absolute;
+  top: 176px;
+  left: 122px;
+  width: 245px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+}
+
+.element-light .text-wrapper-8 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 15px;
+  color: #00311F;
+  margin: 0;
+}
+
+.element-light .container-10 {
+  position: absolute;
+  top: 325px;
+  left: 38px;
+  width: 213px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+}
+
+.element-light .text-wrapper-9 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 15px;
+  color: #00311F;
+  margin: 0;
+}
+
+.element-light .container-11 {
+  position: absolute;
+  top: 610px;
+  left: 38px;
+  width: 205px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+}
+.element-light .text-wrapper-10 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 15px;
+  color: #00311F;
+  margin: 0;
+}
+
+.element-light .container-12 {
+  position: absolute;
+  top: 479px;
+  left: 123px;
+  width: 239px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+.element-light .text-wrapper-11 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 15px;
+  color: #00311F;
+  margin: 0;
+}
+
+.element-light .container-13 {
+  position: absolute;
+  top: 147px;
+  left: 122px;
+  height: 22px;
+}
+
+.element-light .text-wrapper-12,
+.element-light .text-wrapper-13,
+.element-light .text-wrapper-14,
+.element-light .text-wrapper-15 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: #00311F;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.element-light .container-14 {
+  position: absolute;
+  top: 299px;
+  left: 38px;
+  height: 22px;
+  /* overflow: visible; Важно для картинки внутри */
+}
+
+.element-light .element-2 {
+  position: absolute;
+  left: 200px; 
+  top: -38px;
+  width: 146px;
+  height: 152px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.element-light .container-15 {
+  position: absolute;
+  top: 585px;
+  left: 38px;
+  height: 22px;
+}
+
+.element-light .container-16 {
+  position: absolute;
+  top: 451px;
+  left: 123px;
+  height: 22px;
+}
+
+.element-light .container-17 {
+  position: absolute;
+  top: 3px;
+  left: 34px;
+}
+
+.element-light .text-wrapper-16 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #FFF7E6;
+  text-transform: uppercase;
+}
+
+.element-light .by-ar-svg-wrapper {
+  display: none; 
+}
+
+.element-light .by-ar-svg {
+  margin-right: 0;
+  flex: 1;
+  display: flex;
+  aspect-ratio: 2.56;
+}
+
+.element-light .by-ar-svg-fill {
+  height: 36.16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 92.64px;
+  overflow: hidden;
+}
+
+.element-light .vector-wrapper {
+  margin-top: 0;
+  height: 36.18px;
+  margin-left: 0;
+  position: relative;
+  width: 92.64px;
+  overflow: hidden;
+}
+
+.element-light .vector {
+  position: absolute;
+  width: 99.23%;
+  height: 98.58%;
+  top: -28.59%;
+  left: -2.87%;
+  transform: rotate(-14.00deg);
+}
+
+.element-light .link-2 {
+  position: absolute;
+  left: 0;
+  top: 693px;
+  width: 390px;
+  height: 74px;
+  background: linear-gradient(180deg, rgba(70, 89, 64, 0.5) 0%, #FFFCEF 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.element-light .text-wrapper-17 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #FFF7E6;
+}
+
+.element-light .text-wrapper-18 {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  left: 0;
+  height: 55px;
+  font-family: 'Forum', serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.04em;
+  color: #FFF7E6;
+  z-index: 10;
+}
+
+.element-light .neutral-minimalist-2 {
+  position: absolute;
+  top: 539px;
+  left: 262px;
+  width: 123px;
+  height: 154px;
+  object-fit: cover;
+}
+
+.element-light .flash-sale-instagram {
+  position: absolute;
+  top: 130px;
+  left: 9px;
+  width: 115px;
+  height: 115px;
+  object-fit: cover;
+}
+
+.element-light .element-3 {
+  position: absolute;
+  top: 362px;
+  left: -57px;
+  width: 168px;
+  height: 168px;
+  object-fit: contain;
+  transform: matrix(-0.98, 0.17, 0.17, 0.98, 0, 0);
+}
+
+.element-light .background-9 {
+  position: absolute;
+  top: 918px;
+  left: 0;
+  width: 390px;
+  height: 257px;
+  background-color: #465940;
+  
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.element-light .background-9::-webkit-scrollbar {
+  display: none;
+}
+
+.element-light .text-wrapper-19,
+.element-light .text-wrapper-20,
+.element-light .text-wrapper-21,
+.element-light .text-wrapper-22,
+.element-light .text-wrapper-23,
+.element-light .text-wrapper-24 {
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 29px;
+  color: #FFF7E6;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Позиционирование контейнеров заголовков */
+.element-light .container-18,
+.element-light .container-19,
+.element-light .container-20,
+.element-light .container-21,
+.element-light .container-22,
+.element-light .container-23 {
+  position: absolute;
+  top: 20px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+}
+
+/* Координаты заголовков */
+.element-light .container-18 { left: 25px; }   /* ОТЕЧНОСТЬ */
+.element-light .container-19 { left: 262px; }  /* ВЗДУТИЕ */
+.element-light .container-20 { left: 492px; }  /* ОСАНКА */
+.element-light .container-21 { left: 774px; }  /* СЛАБОСТЬ МЫШЦ */
+.element-light .container-22 { left: 1012px; } /* ВОССТАНОВЛЕНИЕ */
+.element-light .container-23 { left: 1226px; } /* ДЕФИЦИТ ВРЕМЕНИ */
+
+/* Общий стиль текста */
+.element-light .text-wrapper-25,
+.element-light .text-wrapper-26,
+.element-light .text-wrapper-27,
+.element-light .text-wrapper-28 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: #FFF7E6;
+  display: flex;
+  align-items: center;
+  white-space: normal; /* Текст должен переноситься внутри своей ширины */
+  height: 100%;
+}
+/* Контейнеры описаний (задаем точную ширину и позицию) */
+.element-light .container-24 {
+  position: absolute;
+  top: 69px;
+  left: 25px;
+  width: 194px;
+  height: 60px;
+}
+
+.element-light .container-25 {
+  position: absolute;
+  top: 69px; /* Выровнял высоту, в макете был скачок 83px */
+  left: 262px;
+  width: 165px;
+  height: 80px; /* Чуть выше из-за объема текста */
+}
+
+.element-light .container-26 {
+  position: absolute;
+  top: 69px;
+  left: 492px;
+  width: 212px;
+  height: 60px;
+}
+
+.element-light .container-27 {
+  position: absolute;
+  top: 69px;
+  left: 774px;
+  width: 212px;
+  height: 60px;
+}
+
+.element-light .container-28 {
+  position: absolute;
+  top: 69px;
+  left: 1012px;
+  width: 179px;
+  height: 60px;
+}
+
+.element-light .container-29 {
+  position: absolute;
+  top: 69px;
+  left: 1226px;
+  width: 179px;
+  height: 60px;
+}
+
+.element-light .horizontal-divider {
+  position: absolute;
+  top: 193px;
+  left: 26px;
+  height: 2px;
+  width: 1400px;
+  background-color: #FFF7E6;
+}
+
+.element-light .background-10,
+.element-light .background-11,
+.element-light .background-12,
+.element-light .background-13,
+.element-light .background-14,
+.element-light .background-15 {
+  position: absolute;
+  top: 169px;
+  height: 50px;
+  width: 10px;
+  background-color: #FFF7E6;
+}
+
+.element-light .background-10 { left: 25px; }
+.element-light .background-11 { left: 262px; }
+.element-light .background-12 { left: 492px; }
+.element-light .background-13 { left: 774px; }
+.element-light .background-14 { left: 1012px; }
+.element-light .background-15 { left: 1226px; }
+
+.element-light .full-body-wrapper {
+  position: absolute;
+  width: calc(100% - 74px);
+  top: 1521px;
+  /* left: 37px; */
+  height: 48px;
+  display: flex;
+}
+
+.element-light article {
+  position: absolute;
+  left: 12px;
+  width: 366px; /* 390 - 12 - 12 */
+  background: #FFFFFF;
+  border: 1px solid #465940;
+  border-radius: 20px;
+  overflow: visible; /* ВАЖНО: чтобы зеленая плашка торчала сверху */
+}
+
+.element-light .overlay-shadow {
+  position: absolute;
+  width: calc(100% - 240px);
+  top: 178px;
+  left: 120px;
+  height: 148px;
+  box-shadow: 0px 10px 30px #1d28221a;
+}
+
+.element-light .gradient-2 {
+  position: absolute;
+  width: calc(100% + 374px);
+  top: 0;
+  left: -167px;
+  height: 92px;
+  transform: rotate(180deg);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 247, 230, 1) 0%,
+    rgba(69, 88, 64, 0) 100%
+  );
+}
+
+.element-light .gradient-3 {
+  position: absolute;
+  width: calc(100% + 374px);
+  top: 4451px;
+  left: -163px;
+  height: 92px;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 247, 230, 1) 0%,
+    rgba(69, 88, 64, 0) 100%
+  );
+}
+
+.element-light .background-26 {
+  position: absolute;
+  top: 4541px;
+  left: 0;
+  width: 390px;
+  height: 743px;
+  background-color: #fff7e6;
+}
+
+.element-light .container-49 {
+  position: absolute;
+  width: calc(100% - 347px);
+  top: 112px;
+  left: 317px;
+  height: 62px;
+  object-fit: cover;
+}
+
+.element-light .container-51 {
+  position: absolute;
+  width: calc(100% - 12px);
+  top: 73px;
+  left: 6px;
+  height: 23px;
+  display: flex;
+  justify-content: center;
+}
+
+.element-light .text-wrapper-45 {
+  width: 331.89px;
+  height: 23px;
+  margin-left: 0.3px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  color: #00311f;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.element-light .group-png-webp {
+  position: absolute;
+  width: calc(100% - 291px);
+  top: 430px;
+  left: 249px;
+  height: 99px;
+  aspect-ratio: 1;
+}
+
+.element-light .text-wrapper-48 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+}
+
+.element-light .text-wrapper-50 {
+  position: absolute;
+  top: 18px;
+  left: calc(50.00% - 131px);
+  height: 44px;
+  font-family: "Forum", serif;
+  font-weight: 400;
+  color: #465940;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: -1.60px;
+  line-height: normal;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.element-light .footer {
+  position: absolute;
+  width: 100%;
+  top: 5284px;
+  left: 0;
+  height: 245px;
+  display: flex;
+  flex-direction: column;
+  background-color: #465940;
+}
+
+.element-light .mispelled-wrapper {
+  margin-left: 20px;
+  margin-right: 151.9px;
+  flex: 1;
+  max-height: 18px;
+  margin-top: 40px;
+  display: flex;
+}
+
+.element-light .mispelled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  width: 218.45px;
+  height: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0.60px;
+  line-height: 18px;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.element-light .link-5 {
+  margin-left: 20px;
+  margin-right: 151.9px;
+  flex: 1;
+  max-height: 18px;
+  margin-top: 15px;
+  display: flex;
+}
+
+.element-light .mispelled-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 112.67px;
+  height: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.element-light .text-wrapper-51 {
+  letter-spacing: 0.07px;
+}
+
+.element-light .text-wrapper-52 {
+  letter-spacing: 0.07px;
+  text-decoration: underline;
+}
+
+.element-light .text-wrapper-53 {
+  margin-top: 1px;
+  width: 145.61px;
+  height: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0.60px;
+  line-height: 18px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.element-light .link-6 {
+  margin-left: 20px;
+  margin-right: 292.0px;
+  flex: 1;
+  max-height: 18px;
+  margin-top: 30px;
+  display: flex;
+}
+
+.element-light .text-wrapper-54 {
+  margin-top: 1px;
+  width: 78.34px;
+  height: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0.60px;
+  line-height: 18px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.element-light .link-7 {
+  margin-left: 20px;
+  margin-right: 292.0px;
+  flex: 1;
+  max-height: 18px;
+  margin-top: 15px;
+  display: flex;
+}
+
+.element-light .text-wrapper-55 {
+  margin-top: 1px;
+  width: 53px;
+  height: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0.60px;
+  line-height: 18px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Original CSS code should be injected here */
+
+.element-light ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.element-light ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.element-light button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+.element-light a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.element-light a:hover {
+  opacity: 0.8;
+}
+
+.element-light button:hover {
+  opacity: 0.8;
+}
+
+.element-light .link,
+.element-light .link-2,
+.element-light .link-3,
+.element-light .link-4 {
+  transition: opacity 0.3s ease;
+}
+
+.element-light .button-dialog {
+  transition: opacity 0.3s ease;
+}
+
+/* === СЕКЦИЯ ПРОГРАММА ИНТЕНСИВА (ИСПРАВЛЕННАЯ) === */
+
+.element-light .background-16 {
+  position: absolute;
+  width: 390px;
+  height: 1662px;
+  left: 0px;
+  top: 1941px; /* Точное значение из макета */
+  background: #FFF7E6;
+}
+
+/* ЗАГОЛОВОК "ПРОГРАММА ИНТЕНСИВА" */
+.element-light .text-wrapper-34 {
+  position: absolute;
+  width: 361px;
+  height: 40px;
+  left: calc(50% - 361px/2 + 0.5px);
+  top: 64px;
+  font-family: 'Forum', serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.04em;
+  color: #465940;
+  margin: 0;
+}
+
+/* === ОБЩИЕ СТИЛИ ДЛЯ БЕЛЫХ КАРТОЧЕК (ARTICLE) === */
+.element-light article {
+  box-sizing: border-box;
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  width: 366px;
+  background: #FFFFFF;
+  border: 1px solid #465940;
+  border-radius: 20px;
+}
+
+/* === ОБЩИЕ СТИЛИ ВНУТРИ КАРТОЧЕК === */
+/* Зеленые плашки с днями */
+.element-light article [class*="background-"] {
+  position: absolute;
+  background: #465940;
+  border: 1px solid #465940; /* Из макета */
+  border-radius: 15px;
+  z-index: 10;
+}
+
+/* Текст заголовка (ДЕНЬ Х) */
+.element-light article [class*="container-"] h3 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #FFFFFF; /* Белый текст */
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Контейнеры с заголовками (ДЕНЬ Х) */
+.element-light article div[class*="container-3"],
+.element-light article div[class*="container-4"] {
+  position: absolute;
+  z-index: 20; /* Поверх зеленой плашки */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 27px;
+  left: 0; 
+  right: 0;
+}
+
+/* Описание (Лекция/Тренировка) */
+.element-light article p {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #00311F;
+  /* text-transform: uppercase; */
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.element-light .span {
+  color: #00311F;
+}
+
+/* === ДЕНЬ 1 (ФУНДАМЕНТ) === */
+/* Карточка */
+.element-light .background-border {
+  height: 190px;
+  top: 162.17px;
+}
+/* Зеленая плашка */
+.element-light .background-border .background-17 {
+  height: 38px;
+  left: 68px; /* 80px global - 12px card padding offset */
+  width: calc(100% - 136px);
+  top: -18.17px; /* Вылезает вверх: 144 - 162.17 */
+}
+/* Заголовок */
+.element-light .background-border .container-32 {
+  top: -13px; /* 149.17 - 162.17 */
+}
+
+
+/* === ДЕНЬ 2 (ПИТАНИЕ) === */
+.element-light .background-border-3 {
+  height: 190px;
+  top: 401.17px;
+}
+.element-light .background-border-3 .background-19 {
+  height: 38px;
+  left: 66px; 
+  width: calc(100% - 132px);
+  top: -22px; /* 379.17 - 401.17 */
+}
+.element-light .background-border-3 .container-38 {
+  top: -17px;
+}
+/* === ДЕНЬ 3 (ВНУТРЕННИЙ ТОНУС) === */
+.element-light .background-border-5 {
+  height: 190px;
+  top: 640.17px;
+}
+.element-light .background-border-5 .background-21 {
+  height: 38px;
+  width: 270px;
+  left: calc(50% - 135px);
+  top: -22.17px; /* 618 - 640.17 */
+}
+.element-light .background-border-5 .container-40 {
+  top: -17px;
+}
+
+/* === ДЕНЬ 4 (ЖЕНСКОЕ ЗДОРОВЬЕ) === */
+.element-light .background-border-2 {
+  height: 190px;
+  top: 875.17px;
+}
+.element-light .background-border-2 .background-18 {
+  height: 38px;
+  left: 45px;
+  width: calc(100% - 90px);
+  top: -18.17px; /* 857 - 875.17 */
+}
+.element-light .background-border-2 .container-33 {
+  top: -13px;
+}
+
+/* === ДЕНЬ 5 (СИЛУЭТ) === */
+.element-light .background-border-4 {
+  height: 144px; /* В макете он ниже */
+  top: 1114px;
+}
+.element-light .background-border-4 .background-20 {
+  height: 38px;
+  left: 66px;
+  width: calc(100% - 132px);
+  top: -21.83px; /* 1092.17 - 1114 */
+}
+.element-light .background-border-4 .container-39 {
+  top: -16.83px;
+}
+
+/* === ДЕНЬ 6 (РЕЛЬЕФ) === */
+.element-light .background-border-6 {
+  height: 126px;
+  top: 1306.83px;
+}
+.element-light .background-border-6 .background-22 {
+  height: 38px;
+  left: 66px;
+  width: calc(100% - 132px);
+  top: -21.83px; /* 1285 - 1306.83 */
+}
+.element-light .background-border-6 .container-41 {
+  top: -16.83px;
+}
+
+/* === ДЕНЬ 7 (ЗАКРЕПЛЕНИЕ) === */
+.element-light .background-border-7 {
+  height: 126px;
+  top: 1482px;
+}
+.element-light .background-border-7 .background-23 {
+  height: 38px;
+  left: 66px;
+  width: calc(100% - 132px);
+  top: -22px; /* 1460 - 1482 */
+}
+.element-light .background-border-7 .container-42 {
+  top: -17px;
+}
+
+/* === ОБЩИЕ СТИЛИ ДЛЯ КОНТЕЙНЕРОВ С ТЕКСТОМ === */
+/* Все они начинаются в одной точке относительно карточки */
+.element-light .container-30,
+.element-light .container-34,
+.element-light .container-36,
+.element-light .container-31,
+.element-light .container-35,
+.element-light .container-37,
+.element-light .full-body-wrapper {
+  position: absolute;
+  /* (Global Top 201.17) - (Card Top 162.17) = 39px */
+  top: 39px; 
+  /* (Global Left 37) - (Card Left 12) = 25px */
+  /* left: 25px;  */
+  /* Ширина карточки (366) - отступ слева (25) - отступ справа (25) = 316px */
+  width: 316px; 
+  height: 112px; /* Максимальная высота из макета */
+  z-index: 5;
+}
+
+/* === СТИЛИЗАЦИЯ САМОГО ТЕКСТА (DIV-2...DIV-5) === */
+/* Общие настройки шрифта из макета */
+.element-light .div-2,
+.element-light .div-3,
+.element-light .div-4,
+.element-light .div-5 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #00311F;
+  /* text-transform: uppercase; */
+  display: block; /* Убираем flex, чтобы работали top/left внутри */
+}
+
+/* Выделение жирным/цветом внутри текста, если нужно */
+.element-light .span {
+  color: #00311F;
+}
+
+/* === ТОЧНАЯ ПОДГОНКА ПО ВЫСОТЕ (Из макета) === */
+
+/* Для Дня 1 и Дня 4 */
+.element-light .div-2 {
+  top: 12px;
+  left: 25px;
+}
+
+/* Для Дня 2 и Дня 3 */
+.element-light .div-3 {
+  top: 11px;
+  left: 25px;
+}
+
+/* Для Дня 5 */
+.element-light .div-4 {
+  top: 0px;
+  left: 25px;
+}
+
+/* Для Дня 6 и Дня 7 */
+.element-light .div-5 {
+  top: 3px;
+  left: 25px;
+}
+
+/* === СЕКЦИЯ: ЧТО ВХОДИТ В ИНТЕНСИВ === */
+
+.element-light .background-24 {
+  position: absolute;
+  top: 3599px;
+  left: 0;
+  width: 390px;
+  height: 944px;
+  background-color: #465940;
+  overflow: hidden;
+}
+
+/* Бежевая подложка (основной контейнер внутри секции) */
+.element-light .background-25 {
+  position: absolute;
+  top: 75px;
+  left: 20px;
+  width: 350px; /* 390 - 20 - 20 */
+  height: 814px;
+  background-color: #FAF9F4;
+  border-radius: 25px;
+  z-index: 5;
+}
+
+/* ЗАГОЛОВОК: "В ИНТЕНСИВ ВХОДИТ" */
+/* Позиционируем относительно background-24, поверх background-25 */
+.element-light .text-wrapper-40 {
+  position: absolute;
+  width: 100%;
+  top: 114px; /* 75px (отступ бежевого) + 114px (отступ внутри) */
+  left: 0;
+  height: 40px;
+  font-family: 'Forum', serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -0.04em;
+  color: #465940;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  margin: 0;
+}
+
+/* === КАРТОЧКИ (Article) === */
+
+/* Общие стили для 3-х карточек */
+.element-light .background-border-8,
+.element-light .background-border-9,
+.element-light .background-border-10 {
+  position: absolute;
+  left: 25px; /* Отступ внутри бежевой карточки (45px макета - 20px parent left) */
+  width: 300px; /* 350px parent width - 25px left - 25px right */
+  background: #FFFFFF;
+  border: 1px solid #465940;
+  border-radius: 15px;
+  box-sizing: border-box;
+  z-index: 1; /* Карточка ниже картинки */
+}
+
+/* Карточка 1: ЧАТ */
+.element-light .background-border-8 {
+  top: 169px;
+  height: 202px;
+}
+
+/* Карточка 2: ГАЙДЫ */
+.element-light .background-border-9 {
+  top: 439px;
+  height: 193px;
+}
+
+/* Карточка 3: ДОСТУП */
+.element-light .background-border-10 {
+  top: 656px;
+  height: 119px;
+}
+
+/* === КАРТИНКИ (Images) === */
+/* Картинки должны быть выше карточек (z-index) */
+
+/* Картинка для Чата (Copy of Untitled-2) */
+.element-light .copy-of-untitled-2 {
+  position: absolute;
+  width: 213px;
+  /* height: 128px; */
+  /* Координаты относительно бежевой подложки (.background-25) */
+  top: 0px; 
+  left: 66px; /* 86px (макет) - 20px (сдвиг родителя) */
+  object-fit: contain;
+  z-index: 10; 
+  pointer-events: none;
+}
+
+/* Картинка для Гайдов (Copy of Untitled) */
+.element-light .copy-of-untitled {
+  position: absolute;
+  width: 154px;
+  /* height: 145px; */
+  top: 315px;
+  left: 98px; /* 118px - 20px */
+  object-fit: contain;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* === ТЕКСТЫ ВНУТРИ КАРТОЧЕК === */
+
+/* Заголовки карточек (H3) */
+.element-light .container-43, /* Чат */
+.element-light .container-44, /* Гайды */
+.element-light .container-47  /* Доступ */
+{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* Сдвигаем заголовки, чтобы они не наезжали на картинки */
+}
+
+.element-light .container-43 { top: 80px; } /* Сдвинут вниз под картинку чата */
+.element-light .container-44 { top: 82px; } /* Сдвинут вниз под картинку гайда */
+.element-light .container-47 { top: 15px; } /* Доступ (без картинки) - выше */
+
+.element-light .text-wrapper-35,
+.element-light .text-wrapper-36,
+.element-light .text-wrapper-39 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600; /* Чуть жирнее для заголовка */
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #00311F !important;
+  margin: 0;
+}
+
+/* Описания карточек (P) */
+.element-light .container-46,
+.element-light .container-45,
+.element-light .container-48 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 15px; /* Внутренние отступы для текста */
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.element-light .container-46 { top: 126px; } /* Описание чата */
+.element-light .container-45 { top: 120px; } /* Описание гайдов */
+.element-light .container-48 { top: 50px; }  /* Описание доступа */
+
+.element-light .text-wrapper-38,
+.element-light .text-wrapper-37,
+.element-light .text-wrapper-41 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px; /* Чуть плотнее */
+  text-align: center;
+  color: #00311F;
+  margin: 0;
+}
+
+/* Градиент сверху секции (переход от предыдущего блока) */
+.element-light .gradient-2 {
+  position: absolute;
+  top: 0;
+  left: 0; 
+  width: 100%;
+  height: 92px;
+  background: linear-gradient(180deg, rgba(255, 247, 230, 0) 0%, rgba(255, 247, 230, 1) 100%); 
+  /* Развернул градиент, чтобы стык был плавным */
+  transform: rotate(180deg);
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* === ФОН СЕКЦИИ === */
+.element-light .background-26 {
+  position: absolute;
+  width: 390px;
+  height: 743px;
+  left: 0px;
+  top: 4541px; /* Точно из макета */
+  background: #FFF7E6;
+}
+
+/* === ЗЕЛЕНАЯ КАРТОЧКА === */
+.element-light .background-27 {
+  position: absolute;
+  height: 592px;
+  left: 13px;
+  right: 11px; /* width calc не нужен, если есть left/right */
+  width: auto; 
+  top: 113px;
+  background: #465940;
+  border-radius: 15px;
+}
+
+/* === ЗАГОЛОВОК СЕКЦИИ "ТАРИФ УЧАСТИЯ" === */
+.element-light .text-wrapper-50 {
+  position: absolute;
+  width: 263px;
+  height: 44px;
+  left: calc(50% - 263px/2 + 0.5px);
+  top: 18px;
+  font-family: 'Forum', serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #465940;
+}
+
+/* === ПОДЗАГОЛОВОК "ПЛОСКИЙ ЖИВОТ" === */
+/* Мазок кисти (фон) */
+.element-light .container-53 {
+  position: absolute;
+  height: 45px;
+  left: 0px;
+  right: 99.33px;
+  top: 15px;
+  background-image: url(../img/vector-1-1-png-webp.png) !important; /* Проверь путь к картинке */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* z-index: 10 !important; */
+}
+
+/* Текст заголовка */
+.element-light .container-54 {
+  position: absolute;
+  height: 37px;
+  left: 0px;
+  right: 123px; /* или width 208px */
+  top: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.element-light .text-wrapper-49 {
+  width: 208px;
+  height: 37px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500 !important;
+  font-size: 22px !important;
+  line-height: 30px !important;
+  color: #00311F !important;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* === СПИСОК (БУЛЛИТЫ) === */
+.element-light .element-wrapper {
+  position: absolute;
+  height: 142px;
+  left: 16px;
+  right: 25px;
+  top: 85px;
+}
+
+.element-light .element-4 {
+  position: absolute;
+  width: 325px;
+  height: 150px;
+  left: calc(50% - 325px/2); /* Центрирование */
+  top: -8px; /* Из макета */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  line-height: 25px !important;
+  color: #FFFCEF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* === РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ === */
+.element-light .border-2 {
+  position: absolute;
+  height: 3.66px;
+  left: 11px;
+  right: 13.69px;
+  width: auto;
+  top: 253px;
+  background: #FFFCEF;
+  border: 1px solid #FFFCEF;
+  opacity: 1;
+}
+
+/* === ТЕКСТ "СТОИМОСТЬ ПО РАННИМ..." === */
+.element-light .container-50 {
+  position: absolute;
+  height: 22px;
+  left: 17px;
+  right: 24px;
+  top: 287.14px;
+}
+
+.element-light .text-wrapper-42 {
+  width: 325px;
+  height: 22px;
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  line-height: 18px !important;
+  color: #FAF9F4;
+  display: flex;
+  align-items: center;
+}
+
+/* === ЦЕНА (БОЛЬШАЯ) === */
+.element-light .container-52 {
+  position: absolute;
+  height: 56px;
+  left: 17px;
+  right: 15px;
+  top: 313px;
+}
+
+.element-light .text-wrapper-46 {
+  width: 188px;
+  height: 56px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600 !important;
+  font-size: 34px !important;
+  line-height: 46px !important;
+  color: #FFFCEF;
+  display: flex;
+  align-items: center;
+}
+
+/* === ЦЕНА (СТАРАЯ ЗАЧЕРКНУТАЯ) === */
+.element-light .element-KZT-wrapper {
+  position: absolute;
+  height: 50px;
+  left: 17px;
+  right: 128.59px;
+  top: 358px;
+}
+
+.element-light .element-KZT {
+  width: 199.4px;
+  height: 50px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500 !important;
+  font-size: 30px !important;
+  line-height: 41px !important;
+  text-decoration-line: line-through;
+  color: #FFFCEF;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.element-light .text-wrapper-47 {
+  margin-right: 5px;
+}
+
+/* === НАКЛЕЙКА (СТИКЕР) === */
+.element-light .group-png-webp {
+  position: absolute;
+  height: 98.89px;
+  width: auto; /* Авто-ширина, чтобы пропорции не сломались */
+  left: 249px;
+  top: 430px;
+  /* ВАЖНО: Добавил поворот из макета */
+  transform: rotate(22deg); 
+  z-index: 10;
+}
+
+/* === КНОПКА 1: ХОЧУ НА ИНТЕНСИВ === */
+.element-light .link-3 {
+  position: absolute;
+  width: 340.23px;
+  height: 62px;
+  left: 13.13px;
+  top: 434px;
+  background: #FFFCEF;
+  border: 1px solid #FEF6CB;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 20;
+}
+
+.element-light .text-wrapper-43 {
+  position: static; 
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  line-height: 25px !important;
+  text-align: center;
+  text-transform: uppercase;
+  color: #530104;
+}
+
+/* === КНОПКА 2: СЛУЖБА ЗАБОТЫ === */
+.element-light .link-4 {
+  position: absolute;
+  width: 340.23px;
+  height: 62px;
+  left: 13px;
+  top: 506.14px;
+  
+  background: transparent; /* Прозрачный фон по умолчанию для второй кнопки? Проверь макет, там border */
+  border: 1px solid #FEF6CB;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0; /* Сбросил паддинги, так как используем flex */
+  z-index: 20;
+}
+
+.element-light .text-wrapper-44 {
+  position: static;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600 !important; 
+  font-size: 18px !important;
+  line-height: 25px !important;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FEF6CB;
+}
+
+/* === СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА === */
+
+/* Фон-затемнение на весь экран */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Поверх всего */
+    
+    /* Начальное состояние - скрыто */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    
+    /* Эффект размытия заднего плана (Blur) */
+    backdrop-filter: blur(0px); 
+    background: rgba(70, 89, 64, 0.1); /* Легкий оттенок зеленого */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Активное состояние (когда открыто) */
+.modal-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    backdrop-filter: blur(8px); /* Сила размытия фона */
+    background: rgba(70, 89, 64, 0.2);
+}
+
+/* Само окошко */
+.modal-window {
+    position: relative;
+    width: 300px;
+    padding: 30px 25px;
+    
+    /* Полупрозрачный фон (Glassmorphism) */
+    background: rgba(255, 247, 230, 0.85); /* Бежевый, 85% непрозрачности */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 49, 31, 0.15);
+    
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+/* Анимация появления окошка снизу вверх */
+.modal-backdrop.active .modal-window {
+    transform: translateY(0);
+}
+
+/* Кнопка закрытия (Крестик) */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #465940;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Заголовок */
+.modal-title {
+    font-family: 'Forum', serif;
+    font-size: 24px;
+    color: #465940;
+    text-align: center;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+}
+
+/* Список регалий */
+.modal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.modal-list li {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #00311F;
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+}
+
+/* Буллиты для списка */
+.modal-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #465940;
+    font-weight: bold;
+}
+
+/* Эффекты для кнопок WhatsApp */
+
+.link-3, .link-4 {
+    transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* При наведении */
+.link-3:hover, .link-4:hover {
+    opacity: 0.9;
+    transform: translateY(-2px); /* Легкий подъем вверх */
+    box-shadow: 0 5px 15px rgba(254, 246, 203, 0.3); /* Легкое свечение */
+}
+
+/* При клике (нажатии) */
+.link-3:active, .link-4:active {
+    transform: translateY(1px); /* Вдавливание */
+    box-shadow: none;
+}
