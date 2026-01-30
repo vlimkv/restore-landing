@@ -537,3 +537,18 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 });
+
+function toggleFullScreenMenu() {
+    const menu = document.getElementById('fsMenu');
+    const body = document.body;
+    
+    // Переключаем класс активности
+    menu.classList.toggle('active');
+    
+    // Блокируем скролл страницы, когда меню открыто
+    if (menu.classList.contains('active')) {
+        body.style.overflow = 'hidden';
+    } else {
+        body.style.overflow = '';
+    }
+}

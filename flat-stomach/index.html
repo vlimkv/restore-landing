@@ -322,13 +322,8 @@
       </section>
       <footer class="footer">
         <nav aria-label="Дополнительная навигация">
-          <div class="mispelled-wrapper"><a href="#" class="mispelled">Политика конфиденциальности</a></div>
-          <div class="link-5">
-            <a href="#" class="mispelled-2">
-              <span class="text-wrapper-51">Договор оферты</span><span class="text-wrapper-52"></span>
-            </a>
-          </div>
-          <div class="link-5"><a href="#" class="text-wrapper-53">Написать менеджеру</a></div>
+          <div class="mispelled-wrapper"><a href="../privacy.html" class="mispelled">Политика конфиденциальности</a></div>
+          <div class="link-5"><a href="https://wa.me/77776776455" class="text-wrapper-53">Написать менеджеру</a></div>
           <div class="link-6"><a href="#program" class="text-wrapper-54">Программа</a></div>
           <div class="link-7"><a href="#tariff" class="text-wrapper-55">Тарифы</a></div>
         </nav>
@@ -347,6 +342,47 @@
     </div>
 </div>
 
+<div class="corner-widget">
+    
+    <button class="corner-btn" onclick="toggleFullScreenMenu()">
+        <span class="corner-btn__text">MENU</span>
+        <span class="corner-btn__icon">
+            <i></i>
+            <i></i>
+        </span>
+    </button>
+
+    <div class="fs-menu" id="fsMenu">
+        <button class="fs-menu__close" onclick="toggleFullScreenMenu()">
+            ЗАКРЫТЬ
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1"/>
+            </svg>
+        </button>
+
+        <nav class="fs-menu__nav">
+            
+            <a href="../index.html" class="fs-link">
+                <span class="fs-link__num">01</span>
+                <span class="fs-link__text">RE:STORE</span>
+                <span class="fs-link__sub">Базовый курс восстановления</span>
+            </a>
+
+            <a href="index.html" class="fs-link">
+                <span class="fs-link__num">02</span>
+                <span class="fs-link__text">INTENSIVE</span>
+                <span class="fs-link__sub">Плоский живот</span>
+            </a>
+
+        </nav>
+        
+        <div class="fs-menu__footer">
+            <span>SEZA AMANKELDI © 2026</span>
+            <a href="https://wa.me/77776776455">WhatsApp Support</a>
+        </div>
+    </div>
+</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Находим элементы
@@ -359,13 +395,13 @@ document.addEventListener('DOMContentLoaded', function() {
     openBtn.addEventListener('click', function(e) {
         e.preventDefault();
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Запрещаем прокрутку фона
+        document.body.style.overflow = 'hidden'; 
     });
 
     // Функция закрытия
     function closeModal() {
         modal.classList.remove('active');
-        document.body.style.overflow = ''; // Возвращаем прокрутку
+        document.body.style.overflow = ''; 
     }
 
     closeBtn.addEventListener('click', closeModal);
@@ -377,6 +413,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function toggleFullScreenMenu() {
+    const menu = document.getElementById('fsMenu');
+    const body = document.body;
+    
+    // Переключаем класс активности
+    menu.classList.toggle('active');
+    
+    // Блокируем скролл страницы, когда меню открыто
+    if (menu.classList.contains('active')) {
+        body.style.overflow = 'hidden';
+    } else {
+        body.style.overflow = '';
+    }
+}
 </script>
   </body>
 </html>
