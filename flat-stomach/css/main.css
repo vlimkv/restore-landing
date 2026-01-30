@@ -1,10 +1,14 @@
 .element-light {
-  position: relative;
-  width: 390px;
-  height: 5529px; /* <--- ДОБАВЬТЕ ЭТУ СТРОКУ (значение из вашего первого макета) */
-  background-color: #ffffff;
-  overflow: hidden; 
-  font-family: 'Manrope', sans-serif;
+    position: relative;
+    width: 390px;
+    height: 5529px; 
+    background-color: #ffffff;
+    overflow: hidden; 
+    font-family: 'Manrope', sans-serif;
+    
+    /* Центровка и тень */
+    margin: 0 auto; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.5); /* Тень, чтобы отделить сайт от фона */
 }
 .element-light .background {
   position: absolute;
