@@ -1,34 +1,142 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
+/* ========================================
+   ГЛОБАЛЬНЫЕ АДАПТИВНЫЕ СТИЛИ
+   ======================================== */
+
 * {
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+/* Адаптивный базовый размер шрифта */
+@media (max-width: 375px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 1025px) {
+    html {
+        font-size: 18px;
+    }
 }
 
 html,
 body {
-  margin: 0px;
-  height: 100%;
-  /* --- ВАЖНЫЕ ИЗМЕНЕНИЯ --- */
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden !important; /* Жестко запрещаем скролл влево-вправо */
-  position: relative;
-  background-color: #465940;
-  /* ------------------------- */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    background-color: #465940;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
+    outline: 2px solid #4a90e2;
+    outline-offset: 2px;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
-/* Также добавьте это в ваш main.css для класса .element-light, 
-   чтобы на компьютере макет был по центру */
+/* Основной контейнер */
 .element-light {
-    margin: 0 auto; /* Центрирует контейнер */
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+/* Адаптивные контейнеры для разных устройств */
+@media (max-width: 390px) {
+    .element-light {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 391px) and (max-width: 767px) {
+    .element-light {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .element-light {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .element-light {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .element-light {
+        max-width: 1400px;
+    }
+}
+
+/* Улучшенная типографика */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Улучшенная доступность */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Скрытие скроллбаров где нужно */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Улучшенные transitions для всех интерактивных элементов */
+a, button {
+    transition: all 0.3s ease;
+}
+
+/* Медиа-запросы для печати */
+@media print {
+    .element-light .button-dialog,
+    .element-light .link,
+    .element-light .link-2,
+    .element-light .link-3,
+    .element-light .link-4 {
+        display: none;
+    }
 }

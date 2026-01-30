@@ -1944,3 +1944,41 @@
     transform: translateY(1px); /* Вдавливание */
     box-shadow: none;
 }
+
+/* --- АДАПТАЦИЯ ДЛЯ КОМПЬЮТЕРА (DESKTOP) --- */
+/* Этот код сработает только если ширина экрана больше 450px */
+@media (min-width: 450px) {
+    
+    /* 1. Красим фон вокруг сайта в темный благородный цвет */
+    body {
+        background-color: #2E3B2B; /* Темнее, чем ваш основной зеленый, для контраста */
+        /* Если хотите картинку на фон, раскомментируйте строку ниже: */
+        /* background-image: url('../img/background-texture.jpg'); background-size: cover; */
+    }
+
+    /* 2. Оформляем сам макет как "телефон" */
+    .element-light {
+        /* Добавляем отступы сверху и снизу, чтобы сайт "парил" */
+        margin-top: 50px;
+        margin-bottom: 50px;
+        
+        /* Скругляем углы контейнера */
+        border-radius: 30px; 
+        
+        /* Добавляем мощную тень, чтобы отделить сайт от фона */
+        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+    }
+    
+    /* 3. Делаем скроллбар (полосу прокрутки) красивой, чтобы не портила вид */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #2E3B2B; 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #FFF7E6; 
+        border-radius: 5px;
+        border: 2px solid #2E3B2B;
+    }
+}
